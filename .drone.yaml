@@ -1,12 +1,10 @@
 kind: pipeline
 name: default
 
-workspace:
-  path: /drone/src/cli
-
 steps:
 - name: build
   image: golang
   commands:
+  - cd cli
   - go get
   - go build

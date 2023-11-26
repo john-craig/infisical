@@ -17,6 +17,6 @@ steps:
   commands:
   - cd cli
   - mkdir -p infisical_1.0-1/usr/bin
-  - mv -v DEBIAN infisical_1.0-1
-  - mv -v infisical-merge infisical_1.0-1/usr/bin/infisical
-  - dpkg-deb -v --build infisical_1.0-1
+  - cp -r DEBIAN infisical_1.0-1
+  - cp infisical-merge infisical_1.0-1/usr/bin/infisical
+  - dpkg-deb --build infisical_1.0-1

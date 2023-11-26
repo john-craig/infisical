@@ -11,8 +11,6 @@ steps:
 
 - name: package
   image: ubuntu
-  settings:
-   - debug: true
   commands:
   - cd cli
   - mkdir -p infisical_1.0-1/usr/bin

@@ -1,5 +1,10 @@
 kind: pipeline
+type: docker
 name: default
+
+trigger:
+  branch:
+  - drone-test
 
 steps:
 - name: build

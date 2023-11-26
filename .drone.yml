@@ -13,6 +13,7 @@ steps:
   image: ubuntu
   commands:
   - cd cli
+  - ls
   - mkdir -p infisical_1.0-1/usr/bin
   - cp -r DEBIAN infisical_1.0-1
   - cp infisical-merge infisical_1.0-1/usr/bin/infisical

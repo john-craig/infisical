@@ -8,7 +8,7 @@ steps:
   - cd cli
   - go get
   - go build
-  - go clean -cache
+  - go clean -modcache
 
 - name: package
   image: ubuntu

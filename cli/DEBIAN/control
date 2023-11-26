@@ -2,6 +2,6 @@ Package: infisical
 Version: 1.0-1
 Section: base
 Priority: optional
-Architecture: i386
+Architecture: x86_64
 Maintainer: John Craig <john.e.craig.jr@gmail.com>
 Description: Infisical CLI

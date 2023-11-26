@@ -2,10 +2,6 @@ kind: pipeline
 type: docker
 name: default
 
-trigger:
-  branch:
-  - drone-test
-
 steps:
 - name: build
   image: golang
@@ -25,3 +21,7 @@ steps:
   - cp -r DEBIAN infisical_1.0-1
   - cp infisical-merge infisical_1.0-1/usr/bin/infisical
   - dpkg-deb --build infisical_1.0-1
+
+trigger:
+  branch:
+  - drone-test

@@ -8,5 +8,5 @@ steps:
 - name: build
   image: golang
   commands:
-  - go mod download
+  - go get
   - go build

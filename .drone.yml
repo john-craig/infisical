@@ -25,6 +25,9 @@ steps:
 
 - name: publish
   image: quay.io/curl/curl
+  environment:
+    DEBIAN_REGISTRY_TOKEN:
+      from_secret: DEBIAN_REGISTRY_TOKEN
   commands:
   - "curl --user john-craig:${DEBIAN_REGISTRY_TOKEN} \
      --upload-file infisical_1.0-1.deb \

@@ -3,25 +3,25 @@ type: docker
 name: default
 
 steps:
-- name: build
-  image: golang
-  commands:
-  - cd cli
-  - go get
-  - go build
-  - go clean -modcache
+# - name: build
+#   image: golang
+#   commands:
+#   - cd cli
+#   - go get
+#   - go build
+#   - go clean -modcache
 
-- name: package
-  image: ubuntu
-  settings:
-    debug: true
-  commands:
-  - cd cli
-  - mkdir -p infisical_1.0-1/usr/bin
-  - cp -r DEBIAN infisical_1.0-1
-  - cp infisical-merge infisical_1.0-1/usr/bin/infisical
-  - dpkg-deb --build infisical_1.0-1
-  - ls
+# - name: package
+#   image: ubuntu
+#   settings:
+#     debug: true
+#   commands:
+#   - cd cli
+#   - mkdir -p infisical_1.0-1/usr/bin
+#   - cp -r DEBIAN infisical_1.0-1
+#   - cp infisical-merge infisical_1.0-1/usr/bin/infisical
+#   - dpkg-deb --build infisical_1.0-1
+#   - ls
 
 - name: publish
   image: quay.io/curl/curl
@@ -29,9 +29,10 @@ steps:
     DEBIAN_REGISTRY_TOKEN:
       from_secret: DEBIAN_REGISTRY_TOKEN
   commands:
-  - '--user "john-craig:$DEBIAN_REGISTRY_TOKEN" \
-     --upload-file "./infisical_1.0-1.deb" \
-     "https://gitea.chiliahedron.wtf/api/packages/john-craig/debian/pool/jammy/main/upload"'
+  - curl -V
+  # - '--user "john-craig:$DEBIAN_REGISTRY_TOKEN" \
+  #    --upload-file "./infisical_1.0-1.deb" \
+  #    "https://gitea.chiliahedron.wtf/api/packages/john-craig/debian/pool/jammy/main/upload"'
 
 trigger:
   branch:

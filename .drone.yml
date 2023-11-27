@@ -29,10 +29,9 @@ steps:
     DEBIAN_REGISTRY_TOKEN:
       from_secret: DEBIAN_REGISTRY_TOKEN
   commands:
-  - echo $DEBIAN_REGISTRY_TOKEN
-  - 'curl --user "john-craig:$DEBIAN_REGISTRY_TOKEN" \
+  - 'curl -v --user "john-craig:$DEBIAN_REGISTRY_TOKEN" \
      --upload-file "./infisical_1.0-1.deb" \
-     https://gitea.chiliahedron.wtf/api/packages/john-craig/debian/pool/jammy/main/upload'
+     "https://gitea.chiliahedron.wtf/api/packages/john-craig/debian/pool/jammy/main/upload"'
 
 trigger:
   branch:

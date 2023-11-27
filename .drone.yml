@@ -24,7 +24,7 @@ steps:
   - ls
 
 - name: publish
-  image: ubuntu
+  image: quay.io/curl/curl
   commands:
   - "curl --user john-craig:${DEBIAN_REGISTRY_TOKEN} \
      --upload-file infisical_1.0-1.deb \
